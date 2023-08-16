@@ -1,28 +1,29 @@
 import './App.css';
-import { useState , useEffect } from 'react';
-
+import { useState  } from 'react';
+// import { useHistory } from 'react-router-dom';
 // import Button from './components/Button/Button';
 // import { Header } from './components/Header/Header';
-// import{employeeData} from "./data";
-// import Container from './components/Container/Container';
+import{employeeData} from "./data";
 import Employee from './components/Employee/Employee';
 
+
+
 function App() {
-  // const [employeesData, setEmployeesData]=useState(employeeData);
-  const [employeesData, setEmployeesData]=useState([]);
-  const [count, setCount]=useState(0)
+  const [employeesData, setEmployeesData]=useState(employeeData);
+  // const [employeesData, setEmployeesData]=useState([]);
+  // const [count, setCount]=useState(0)
    
 
-  const requestURL="https://calm-everglades-09552-105a0b4519dc.herokuapp.com/api/employee/employees";
+  // const requestURL="https://calm-everglades-09552-105a0b4519dc.herokuapp.com/api/employee/employees";
 
 
-  const getEmployeesData = async () =>{
-    const response = await fetch(requestURL);
-    const data = await response.json();
-    setEmployeesData(data);
-    // console.log(data);
+  // const getEmployeesData = async () =>{
+  //   const response = await fetch(requestURL);
+  //   const data = await response.json();
+  //   setEmployeesData(data);
+  //   // console.log(data);
 
-  };
+  // };
 
 
   // useEffect(() => {
@@ -41,29 +42,30 @@ function App() {
   //   console.log("useEffect");
   // },[count]);
 
-useEffect(()=>{
-    getEmployeesData();
-    console.log("fetched");
-},[]); // it runs at onece when there is a re-render
+// useEffect(()=>{
+//     getEmployeesData();
+//     // console.log("fetched");
+// },[]); // it runs at onece when there is a re-render
 
 
   // console.log(setEmployeesData)
   return (
     <div className="App">
-   
+      <Employee 
+                employeesData={employeesData} 
+                setEmployeesData={setEmployeesData}/>
 
-     <Employee 
-     employeesData={employeesData} 
-     setEmployeesData={setEmployeesData}/>
+                
 
      <div>
-    <p>You clicked {count} times</p>
-    <button onClick={() => setCount(count + 1)}>Click me</button>
+    {/* <p>You clicked {count} times</p>
+    <button onClick={() => setCount(count + 1)}>Click me</button> */}
   </div>
 
     </div>
   );
 }
+
 
 export default App;
 

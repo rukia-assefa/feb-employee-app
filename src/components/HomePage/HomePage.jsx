@@ -1,34 +1,34 @@
 import React from 'react';
 import EmployeeList from '../EmployeeList/EmployeeList';
-import {employeeData } from '../../data';
 import { styled } from 'styled-components';
+import SearchBar from '../SearchBar/SearchBar';
 
 const StyledHomePage = styled.div`
       background-color: #fff;
       width: 50%;
       height : 70%;
       border: 1px solid orange;
+      padding: 2px 16px;
 
 `
 
-function HomePage({employeesData, setEmployeesData}) {
-  
-  // console.log(employeeData)
- 
+export default function HomePage({employeesData, setEmployeesData,selectedEmployee,handleEmployeeDetailClick}) {
+
   return (<>
     <StyledHomePage>
-      <EmployeeList 
+    <SearchBar 
           employeesData={employeesData} 
-          setEmployeesData={setEmployeesData}
-      />
-    {/* <button onClick={()=>{
-      setEmployeesData(employeeData)
-    }}> update</button> */}
+          setEmployeesData={setEmployeesData}/>
+      <EmployeeList  employeesData={employeesData} 
+          selectedEmployee={selectedEmployee} 
+          handleEmployeeDetailClick={handleEmployeeDetailClick}/>
+    
+          
     </StyledHomePage>
+
 
 </>
   );
 }
 
 
-export default HomePage
