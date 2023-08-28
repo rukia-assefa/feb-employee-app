@@ -46,14 +46,14 @@ function Login() {
     <StyledFormContainer>
         <h2> Sign up</h2>
         <StyledInputWrapper>
-        <StyledInput name='userName' type='username' onChange={handelAllChanges}></StyledInput>
+        <StyledInput name='userName' type='text' onChange={handelAllChanges}></StyledInput>
         <StyledInput name='password' type='password' onChange={handelAllChanges}></StyledInput>
 
         </StyledInputWrapper>
         
         
         <StyledButton onClick={()=>{
-            console.log("login is sucusseful")
+            console.log(Login)
         }}> Login In</StyledButton>
     </StyledFormContainer>
   )

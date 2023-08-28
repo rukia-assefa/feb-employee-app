@@ -12,18 +12,12 @@ const StyledHomePage = styled.div`
 
 `
 
-export default function HomePage({employeesData, setEmployeesData,selectedEmployee,handleEmployeeDetailClick}) {
+ export default function HomePag () {
 
   return (<>
     <StyledHomePage>
-    <SearchBar 
-          employeesData={employeesData} 
-          setEmployeesData={setEmployeesData}/>
-      <EmployeeList  employeesData={employeesData} 
-          selectedEmployee={selectedEmployee} 
-          handleEmployeeDetailClick={handleEmployeeDetailClick}/>
-    
-          
+      <SearchBar />
+      <EmployeeList  />      
     </StyledHomePage>
 
 

@@ -10,6 +10,7 @@ import{
 
 
 export default function AddEmployee({employeesData, setEmployeesData}){
+    const[errors, setErrors]=useState({})
     const [formData,setFormData]= useState({
         name:"",
         title:"",
@@ -40,34 +41,65 @@ export default function AddEmployee({employeesData, setEmployeesData}){
     }
     const handleSubmite=(e)=>{
         e.preventDefault();
-        setEmployeesData([...employeesData,formData]);
-        setFormData(  {name:"",
-        title:"",
-        imageURL:"",
-        callMobile:"",
-        callOffice:"",
-        sms:"",
-        email:"",})
+        if(formValidation()){
+            
+            setEmployeesData([...employeesData,formData]);
+            setFormData(  {name:"",
+            title:"",
+            imageURL:"",
+            callMobile:"",
+            callOffice:"",
+            sms:"",
+            email:"",})
+
+        }
+       
+        // setEmployeesData([...employeesData,formData]);
+        // setFormData(  {name:"",
+        // title:"",
+        // imageURL:"",
+        // callMobile:"",
+        // callOffice:"",
+        // sms:"",
+        // email:"",})
 
     }
-    // useEffect((e)=>{
-    //     const{name, value}= e.target
+    
+const formValidation=()=>{
+    let listErrors={}
+    // name validation
+    if(formData.name ===""){
+        listErrors.name ="Name can not be empty!"
 
+    }
+    // email validation
+    // trim will ignore the space if the user apply space at end or begining 
+    if(formData.email.trim() ===""){
+        listErrors.email="email can not be empty"
+    }else if(!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(formData.email)){
+        listErrors.email="email is not valid"
 
-    // },[])
-
+    }
+    console.log(listErrors)
+    setErrors(listErrors)
+    return Object.keys(listErrors).length === 0;
+}
     
     return(<>
     <StyledFormContainer>
     <h1> Add Employee  </h1>
         <StyledForm action="" onSubmit={handleSubmite}>
             <StyledInputWrapper>
-                <StyledLabel htmlFor="name">Name :</StyledLabel>
-                <StyledInput onChange={handleChange}
+                <StyledLabel htmlFor="name">Name <span style={{color:"red"}}>*</span>:</StyledLabel>
+                <StyledInput 
+                onChange={handleChange}
                 name='name'
                 type="text" 
                 value={formData.name}
-                ></StyledInput>
+                >
+                </StyledInput>
+             {errors.name && <p style={{ color: "red", margin: 0, lineHeight:1}}>{errors.name}</p>}
+
             </StyledInputWrapper>
                 
             <StyledInputWrapper>
@@ -113,7 +145,11 @@ export default function AddEmployee({employeesData, setEmployeesData}){
                 <StyledLabel htmlFor="email">Email :</StyledLabel>
                 <StyledInput
                 onChange={handleChange}
-                 name='email' type="text" value={formData.email} ></StyledInput>
+                 name='email' type="text" 
+                 value={formData.email} >
+
+                 </StyledInput>
+                 {errors.name&&<p>{errors.email}</p>}
             </StyledInputWrapper>
 
             <StyledButton>

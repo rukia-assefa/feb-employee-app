@@ -7,14 +7,14 @@ const StyledEmployeeList = styled.div`
   gap: 5px;
 `;
 
-function EmployeeList({ employeesData, selectedEmployee,handleEmployeeDetailClick }) {
+function EmployeeList() {
   return (
     <StyledEmployeeList>
       
       <EmployeeListItem 
-      employeesData={employeesData} 
-      selectedEmployee={selectedEmployee}
-      handleEmployeeDetailClick={handleEmployeeDetailClick}
+     
+      // selectedEmployee={selectedEmployee}
+      // handleEmployeeDetailClick={handleEmployeeDetailClick}
 
       />
     </StyledEmployeeList>

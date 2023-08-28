@@ -17,7 +17,7 @@ export const StyledForm= styled.form`
 `;
 export const StyledInputWrapper= styled.div`
     display: flex;
-    gap:16px;
+    gap:8px;
     width:80%;
 
 

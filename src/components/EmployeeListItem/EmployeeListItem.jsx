@@ -1,9 +1,7 @@
-import React, { useState} from 'react';
+import React from 'react';
+import { useContext } from 'react';
 import { styled } from 'styled-components';
-// import EmployeeDetail from '../EmployeeDetail/EmployeeDetail';
-// import EmployeeContext from '../EmployeeContext'; // Import the default export
-// import React, { useContext } from 'react';
-// import React from 'react';
+import { EmployeeContext } from '../../context';
 
 
 
@@ -36,7 +34,10 @@ const StyledEmployeeList = styled.div`
     display: flex;
 `;
 
-export default function EmployeeListItem({ employeesData, selectedEmployee, handleEmployeeDetailClick }) {
+// export default function EmployeeListItem({ employeesData, selectedEmployee, handleEmployeeDetailClick }) {
+  export default function EmployeeListItem() {
+const {employeesData,handleEmployeeDetailClick}=useContext(EmployeeContext)
+
   return (
     <StyledEmployeeList>
       <div>

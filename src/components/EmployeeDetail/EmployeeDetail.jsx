@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
+import { EmployeeContext } from '../../context';
 
 
 
@@ -28,29 +29,31 @@ const StyledContent = styled.div`
 
 
 `;
-function EmployeeDetail({ employeesData, selectedEmployee }) {
+function EmployeeDetail() {
+  const {employeesData,name,selectedEmployee}=useContext(EmployeeContext)
+
   return (
     <StyledEmployeeDetail>
-      {selectedEmployee !== null ? (
+      {name}
+
+       {selectedEmployee !== null ? (
         <div>
           <StyledImage src={employeesData[selectedEmployee].imageURL} alt="" />
           <StyledContent>
-            <h4>Name :{employeesData[selectedEmployee].name}</h4>
-            <p><b>Title:</b> {employeesData[selectedEmployee].title}</p>
-            <p><b>Call Mobile: </b>{employeesData[selectedEmployee].callMobile}</p>
-            <p><b>call Office: </b>{employeesData[selectedEmployee].callOffice}</p>
-            <p> <b> Sms : </b>{employeesData[selectedEmployee].sms}</p>
-            <p> <b>Email:  </b>{employeesData[selectedEmployee].email}</p>
-
-
-
-            {/* ... display other employee details ... */}
-          </StyledContent>
-        </div>
+          <h4>Name :{employeesData[selectedEmployee].name}</h4>
+           <p><b>Title:</b> {employeesData[selectedEmployee].title}</p>
+          <p><b>Call Mobile: </b>{employeesData[selectedEmployee].callMobile}</p>
+          <p><b>call Office: </b>{employeesData[selectedEmployee].callOffice}</p>
+          <p> <b> Sms : </b>{employeesData[selectedEmployee].sms}</p>
+         <p> <b>Email:  </b>{employeesData[selectedEmployee].email}</p>
+           </StyledContent>
+       </div>
       ) : (
         <p>No employee selected</p>
-      )}
-    </StyledEmployeeDetail>
+       )} 
+      
+      </StyledEmployeeDetail>
+
   );
 }
 
