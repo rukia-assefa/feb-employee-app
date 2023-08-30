@@ -42,13 +42,13 @@ const {employeesData,handleEmployeeDetailClick}=useContext(EmployeeContext)
     <StyledEmployeeList>
       <div>
       {employeesData.length > 0 ? (
-        employeesData.map((employee, index) => (
-          <StyledEmployeeListItem key={index}>
+        employeesData.map((employee, id) => (
+          <StyledEmployeeListItem key={id}>
             <button>
                             <StyledImage
                                 src={employee.imageURL}
                                 alt=""
-                                onClick={() => handleEmployeeDetailClick(index)}
+                                onClick={() => handleEmployeeDetailClick(id)}
                             />
                         </button>
             <StyledContent>

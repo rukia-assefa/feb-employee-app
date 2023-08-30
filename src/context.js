@@ -5,14 +5,14 @@ export const EmployeeContext= createContext();
 
  export const EmployeeProvider=(props)=>{
      const [employeesData, setEmployeesData]=useState(employeeData);
-     const [selectedEmployee, setSelectedEmployee] = useState(null);
+     const [selectedEmployee, setSelectedEmployee] = useState([0]);
 
-    const handleEmployeeDetailClick = (index) => {
-    setSelectedEmployee(index);
+    const handleEmployeeDetailClick = (id) => {
+    setSelectedEmployee(id);
   }
-    const name ="rukia"
+    // const name ="rukia"
     return(
-        <EmployeeContext.Provider value={{employeesData,name,selectedEmployee,setSelectedEmployee, setEmployeesData,handleEmployeeDetailClick}}>
+        <EmployeeContext.Provider value={{employeesData,selectedEmployee,setSelectedEmployee, setEmployeesData,handleEmployeeDetailClick}}>
             {props.children}
         </EmployeeContext.Provider>
     );
