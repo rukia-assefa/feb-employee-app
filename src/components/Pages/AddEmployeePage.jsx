@@ -1,11 +1,12 @@
-import React from 'react'
-import AddEmployee from '../AddEmployee/AddEmployee'
+import AddEmployee from "../AddEmployee/AddEmployee";
+import Container from "../Container/Container";
 
-function AddEmployeePage() {
+const AddEmployeePage = () => {
   return (
-        <AddEmployee />
+    <Container>
+      <AddEmployee />
+    </Container>
+  );
+};
 
-    )
-}
-
-export default AddEmployeePage
+export default AddEmployeePage;

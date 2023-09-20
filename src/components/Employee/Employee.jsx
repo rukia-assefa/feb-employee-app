@@ -1,23 +1,18 @@
-import React from 'react';
+import React from "react";
 import "./Employee.css";
-import HomePage from '../HomePage/HomePage';
-import Container from '../Container/Container';
-import EmployeeDetail from '../EmployeeDetail/EmployeeDetail';
+import HomePage from "../HomePage/HomePage";
+import EmployeeDetail from "../EmployeeDetail/EmployeeDetail";
+import Container from "../Container/Container";
 
 function Employee() {
- 
-  return (<>
+  return (
     <div className='employee-wrapper'>
-        <Container>
-            <HomePage />
-            <EmployeeDetail />
-        </Container>
+      <Container>
+        <HomePage />
+        <EmployeeDetail />
+      </Container>
     </div>
-    </>
-
   );
 }
 
-
-
-export default Employee
+export default Employee;

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import{
     StyledFormContainer,
     StyledForm,
@@ -7,9 +7,11 @@ import{
     StyledLabel,
     StyledButton,
 }from './StyledComponet'
+import { EmployeeContext } from '../../context';
 
 
-export default function AddEmployee({employeesData, setEmployeesData}){
+export default function AddEmployee(){
+    const {employeesData, setEmployeesData}= useContext(EmployeeContext)
     const[errors, setErrors]=useState({})
     const [formData,setFormData]= useState({
         name:"",

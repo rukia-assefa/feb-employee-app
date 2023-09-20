@@ -2,17 +2,18 @@ import React from 'react';
 import { useContext } from 'react';
 import { styled } from 'styled-components';
 import { EmployeeContext } from '../../context';
+import { Paper } from "@mui/material";
 
 
 
 
-const StyledEmployeeListItem = styled.div`
-    display: flex;
-    margin-top: 5px;
-    background-color: white;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
-    align-items: center;
-    padding: 5px 10px;
+const StyledEmployeeListItem = styled(Paper)`
+  display: flex;
+  margin-top: 5px;
+  background-color: white;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+  align-items: center;
+  padding: 5px 10px;
 `;
 
 const StyledImage = styled.img`

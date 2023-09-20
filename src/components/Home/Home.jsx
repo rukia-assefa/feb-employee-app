@@ -1,15 +1,32 @@
-import React from 'react'
+import { useNavigate } from "react-router-dom";
+import { Button } from "@mui/material";
 
-function Home() {
+const Home = () => {
+  const navigate = useNavigate();
+
+  const handleLoginNavigate = () => {
+    navigate("/login");
+  };
   return (
     <div>
-        <h2>Welcome to the employee app</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae est nam, labore saepe deserunt rerum maxime mollitia delectus. Atque, voluptate?
-        </p>
-        <button>Log In</button>
-        <button>Sign Up</button>
+      <h2>Welcom to the Employee App!</h2>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Soluta ab
+        libero quasi accusamus. Voluptatum minima neque ut, commodi laboriosam
+        fuga?
+      </p>
+      {/* <button onClick={handleLoginNavigate}>Log in</button>
+      <button>Sign up</button> */}
+      <Button
+        variant='contained'
+        sx={{ marginRight: "1rem" }}
+        onClick={handleLoginNavigate}
+      >
+        Log in
+      </Button>
+      <Button variant='outlined'>Sign up</Button>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
