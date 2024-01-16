@@ -30,12 +30,6 @@ export default function AddEmployee(){
         
         const{name, value}= e.target
         setFormData((prevData)=>({
-            // the spread will keep the previous value 
-            // name is the key of objet 
-            //example :var person = {};
-            // var key = "name";
-            // person[key] /* this is same as person.name */ = "John";
-            // console.log(person)
             ...prevData,[name]:value,
 
         }));
@@ -55,15 +49,6 @@ export default function AddEmployee(){
             email:"",})
 
         }
-       
-        // setEmployeesData([...employeesData,formData]);
-        // setFormData(  {name:"",
-        // title:"",
-        // imageURL:"",
-        // callMobile:"",
-        // callOffice:"",
-        // sms:"",
-        // email:"",})
 
     }
     

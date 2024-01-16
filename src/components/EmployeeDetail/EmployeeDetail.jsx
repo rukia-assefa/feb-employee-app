@@ -14,6 +14,7 @@ const StyledEmployeeDetail = styled.div`
     padding:0;
     margin:0;
   }
+
 `;
 
 const StyledImage = styled.img`

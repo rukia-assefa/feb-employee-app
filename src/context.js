@@ -10,7 +10,6 @@ export const EmployeeContext= createContext();
     const handleEmployeeDetailClick = (id) => {
     setSelectedEmployee(id);
   }
-    // const name ="rukia"
     return(
         <EmployeeContext.Provider value={{employeesData,selectedEmployee,setSelectedEmployee, setEmployeesData,handleEmployeeDetailClick}}>
             {props.children}

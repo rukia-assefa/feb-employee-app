@@ -35,7 +35,6 @@ const StyledEmployeeList = styled.div`
     display: flex;
 `;
 
-// export default function EmployeeListItem({ employeesData, selectedEmployee, handleEmployeeDetailClick }) {
   export default function EmployeeListItem() {
 const {employeesData,handleEmployeeDetailClick}=useContext(EmployeeContext)
 

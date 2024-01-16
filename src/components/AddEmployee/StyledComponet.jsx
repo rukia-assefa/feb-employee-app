@@ -2,7 +2,7 @@ import { styled } from "styled-components"
 
 export const StyledFormContainer= styled.div`
         wisth 40%;
-        margin: 30px auto;
+        margin: 50px auto;
         display: flex;
         flex-direction: column;
         alignitems: center;

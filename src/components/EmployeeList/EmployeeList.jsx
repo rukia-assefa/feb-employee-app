@@ -12,9 +12,6 @@ function EmployeeList() {
     <StyledEmployeeList>
       
       <EmployeeListItem 
-     
-      // selectedEmployee={selectedEmployee}
-      // handleEmployeeDetailClick={handleEmployeeDetailClick}
 
       />
     </StyledEmployeeList>

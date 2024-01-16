@@ -21,11 +21,6 @@ const SearchBar = () => {
   const handleChange = (event) => {
     setSearchItem(event.target.value);
   };
-
-  // create a function that checks the employee name and if we find the same employee name and
-  //then we'll add it in a new array
-  //updating the existing employeesData with the new array
-
   const handleSearch = () => {
     const searchResult = employeesData.filter((item) => {
       return (
